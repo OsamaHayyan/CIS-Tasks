@@ -1,0 +1,33 @@
+1-الpure functions لابد أن تكون
+ *نتيجتها متوقعة
+ *ملهاش آثار جانبية
+
+بالنسبة ﻷول شرط، فا بسيط جدا، المتغيرات اللي هتستعملها لازم تكون نتيجتها واحدة مهما ناديت الميثود زي 5 + 5 دائما هتكون 10، الميثود هيكون مسئول عن جمعهم فقط لا غير
+
+بالنسبة للآثار الجانبية فا هي انك تعمل عملية ملهاش علاقة بالناتج النهائي، على سبيل المثال HTTP REQUEST, DOM operations..etc
+
+وأي ميثود غير دي هي impure function
+
+//pure function
+const pureFunc = (num1, num2) => {
+  return num1 + num2;
+};
+
+pureFunc(5, 5)
+//10
+
+pureFunc(5, 5)
+//10
+
+//impure function
+let globalVariable = 0;
+const impureFunc = (num) => {
+  globalVariable += num
+  return globalVariable;
+};
+
+impureFunc(5);
+//5
+
+impureFunc(5);
+//10
